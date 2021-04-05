@@ -14,7 +14,7 @@ const _createCompileSvelte = (makeHot: Function, extraPreprocessors: Preprocesso
 		code: string,
 		options: Partial<ResolvedOptions>
 	): Promise<CompileData> {
-		const { filename, normalizedFilename, cssId, ssr } = svelteRequest;
+		const { filename, normalizedFilename, id, cssId, ssr } = svelteRequest;
 		const { onwarn, emitCss = true } = options;
 		const dependencies = [];
 		const finalCompilerOptions: CompileOptions = {
@@ -78,9 +78,11 @@ const _createCompileSvelte = (makeHot: Function, extraPreprocessors: Preprocesso
 		const result = {
 			filename,
 			normalizedFilename,
+			id,
 			cssId,
 			code,
 			preprocessed,
+			preprocessedDependencies: dependencies,
 			compiled,
 			compilerOptions: finalCompilerOptions,
 			options,
@@ -144,9 +146,11 @@ export interface Compiled {
 export interface CompileData {
 	filename: string;
 	normalizedFilename: string;
+	id: string;
 	cssId: string;
 	code: string;
 	preprocessed?: Processed;
+	preprocessedDependencies: string[];
 	compiled: Compiled;
 	compilerOptions: CompileOptions;
 	options: Partial<ResolvedOptions>;

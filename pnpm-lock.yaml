@@ -175,6 +175,19 @@ importers:
       svelte: ^3.35.0
       svelte-hmr: ^0.13.0
       vite: ^2.1.2
+  packages/playground/svelte-preprocess:
+    devDependencies:
+      '@sveltejs/vite-plugin-svelte': link:../../vite-plugin-svelte
+      svelte: 3.37.0
+      svelte-preprocess: 4.7.0_svelte@3.37.0+typescript@4.2.3
+      typescript: 4.2.3
+      vite: 2.1.5
+    specifiers:
+      '@sveltejs/vite-plugin-svelte': workspace:*
+      svelte: ^3.37.0
+      svelte-preprocess: ^4.7.0
+      typescript: ^4.2.3
+      vite: ^2.1.5
   packages/playground/vite-ssr:
     devDependencies:
       '@sveltejs/vite-plugin-svelte': link:../../vite-plugin-svelte
@@ -1330,7 +1343,7 @@ packages:
       integrity: sha1-h3L80EGOPNLMFxVV1zAHQVBR9LI=
   /@types/sass/1.16.0:
     dependencies:
-      '@types/node': 14.14.32
+      '@types/node': 14.14.35
     dev: true
     resolution:
       integrity: sha512-2XZovu4NwcqmtZtsBR5XYLw18T8cBCnU2USFHTnYLLHz9fkhnoEMoDsqShJIOFsFhn5aJHjweiUUdTrDGujegA==
@@ -8402,12 +8415,68 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-SROWH0rB0DJ+0Ii264cprmNu/NJyZacs5wFD71ya93Cg/oA2lKHgQm4F6j0EWA4ktFMzeuJJm/eX6fka39hEHA==
+  /svelte-preprocess/4.7.0_svelte@3.37.0+typescript@4.2.3:
+    dependencies:
+      '@types/pug': 2.0.4
+      '@types/sass': 1.16.0
+      detect-indent: 6.0.0
+      strip-indent: 3.0.0
+      svelte: 3.37.0
+      typescript: 4.2.3
+    dev: true
+    engines:
+      node: '>= 9.11.2'
+    peerDependencies:
+      '@babel/core': ^7.10.2
+      coffeescript: ^2.5.1
+      less: ^3.11.3
+      node-sass: '*'
+      postcss: ^7 || ^8
+      postcss-load-config: ^2.1.0 || ^3.0.0
+      pug: ^3.0.0
+      sass: ^1.26.8
+      stylus: ^0.54.7
+      sugarss: ^2.0.0
+      svelte: ^3.23.0
+      typescript: ^3.9.5 || ^4.0.0
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      coffeescript:
+        optional: true
+      less:
+        optional: true
+      node-sass:
+        optional: true
+      postcss:
+        optional: true
+      postcss-load-config:
+        optional: true
+      pug:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      typescript:
+        optional: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-iNrY4YGqi0LD2e6oT9YbdSzOKntxk8gmzfqso1z/lUJOZh4o6fyIqkirmiZ8/dDJFqtIE1spVgDFWgkfhLEYlw==
   /svelte/3.35.0:
     dev: true
     engines:
       node: '>= 8'
     resolution:
       integrity: sha512-gknlZkR2sXheu/X+B7dDImwANVvK1R0QGQLd8CNIfxxGPeXBmePnxfzb6fWwTQRsYQG7lYkZXvpXJvxvpsoB7g==
+  /svelte/3.37.0:
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-TRF30F4W4+d+Jr2KzUUL1j8Mrpns/WM/WacxYlo5MMb2E5Qy2Pk1Guj6GylxsW9OnKQl1tnF8q3hG/hQ3h6VUA==
   /svg-tags/1.0.0:
     dev: true
     resolution:
@@ -9095,6 +9164,20 @@ packages:
       fsevents: 2.3.2
     resolution:
       integrity: sha512-K96k5Nb1kywggFwZNGf/NQVZIrjMSvjebYWFIEQRu8AQWtzxatMF8/reExFXebmrfWAT3PTUk6l4zJBkpMtyVg==
+  /vite/2.1.5:
+    dependencies:
+      esbuild: 0.9.5
+      postcss: 8.2.8
+      resolve: 1.20.0
+      rollup: 2.42.0
+    dev: true
+    engines:
+      node: '>=12.0.0'
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    resolution:
+      integrity: sha512-tYU5iaYeUgQYvK/CNNz3tiJ8vYqPWfCE9IQ7K0iuzYovWw7lzty7KRYGWwV3CQPh0NKxWjOczAqiJsCL0Xb+Og==
   /w3c-hr-time/1.0.2:
     dependencies:
       browser-process-hrtime: 1.0.0
